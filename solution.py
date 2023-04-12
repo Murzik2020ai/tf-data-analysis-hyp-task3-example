@@ -2,10 +2,9 @@ import pandas as pd
 import numpy as np
 
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
+chat_id = 1226526788
 
-def solution(...) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+from scipy.stats import wilcoxon
+def solution(x: np.array, y:np.array) -> bool:
+    pvalue = wilcoxon(x,y).pvalue
+    return True if pvalue < 0.03 else False
