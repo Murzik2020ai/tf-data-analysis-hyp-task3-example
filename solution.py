@@ -16,4 +16,5 @@ def solution(x: np.array, y:np.array) -> bool:
   Возвращаемое значение: bool-значение , ответ на вопрос: "Отклонить ли нулевую гипотезу" на заданном уровне значимости.
   '''
   pvalue = ttest_ind(x,y,equal_var=False).pvalue
+  
   return True if pvalue < 0.03 else False
